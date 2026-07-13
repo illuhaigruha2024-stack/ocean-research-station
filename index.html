@@ -1,38 +1,171 @@
-<!DOCTYPE html>
-<html lang="uk">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ocean Research Station</title>
-    <!-- Підключення шрифту з Google Fonts -->
-    <link href="<https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap>" rel="stylesheet">
-    <!-- Підключення стилів -->
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-    <!-- ХЕДЕР -->
+  <body>
     <header class="header">
-        <h1 class="header__title">Ocean Research Station</h1>
-        <p class="header__subtitle">Discover the mysteries of the deep</p>
+      <div class="hero-container">
+        <h1 class="hero-title">Ocean Research Station</h1>
+        <div class="description">
+          <p class="description-text">
+            Explore the ocean and discover marine life
+          </p>
+        </div>
+      </div>
     </header>
 
-    <!-- СЕКЦІЯ 1: ВІДКРИТІ ВИДИ -->
-    <section class="species-section">
-        <h2 class="species-section__counter">
-            Discovered species: <span id="counter">0</span>
-        </h2>
-        <div class="cards-container">
-<img src="https://images.unsplash.com/photo-1535591273668-578e31182c4f?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y2xvd24lMjBmaXNofGVufDB8fDB8fHww" alt="Clownfish" width="100"><p>Clownfish</p></li>
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNADU8wkndNIlIMd29EI4pX1Q6fzjTkC8_7XFRNiWdmw&s=10" alt="Octopus" width="100"><p>Octopus</p></li>
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQK475MJCJpx3aNiPjKcFC9BsHNKp0Mf3NT6VVMtJWU4g&s=10" alt="Jellyfish" width="100"><p>Jellyfish</p></li>
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQirACTKc4J37j-XmMYh6q5rWdW_plEHQuRtujXvb6C3Q&s=10" alt="Shark" width="100"><p>Shark</p></li><li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyqybCW0n3LxOwJl8nRQMlEWZzWAHFuSTCxJhOlrcpzw&s=10" alt="Sea Turtle" width="100"><p>Sea Turtle</p></li>
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0z8CnR6y1l2mXpQ9sh2Q2lKIDiWyFkJLofx8EtS3pTw&s=10" alt="Stingray" width="100"><p>Stingray</p></li>
- 
+    <main class="main">
+      <section class="discovered">
+        <div class="discovered-container">
+          <h2 class="discovered-title">Discovered Species</h2>
+          <button class="discovered-button">
+            Discovered Species: <span> 0 </span>
+          </button>
         </div>
-    </section>
+        <div class="cards-container">
+          <div class="species-card">
+            <img
+              src="./images/Clownfishswimminginananemone.png"
+              alt="Clownfish"
+            />
+            <h3>Clownfish</h3>
+          </div>
+          <div class="species-card">
+            <img src="./images/Seaturtleswimming.png" alt="Sea turtle" />
+            <h3>Sea turtle</h3>
+          </div>
+          <div class="species-card">
+            <img src="./images/Stingraygliding.png" alt="Stingray" />
+            <h3>Stingray</h3>
+          </div>
+          <div class="species-card">
+            <img src="./images/Jellyfishglowing.png" alt="Jellyfish" />
+            <h3>Jellyfish</h3>
+          </div>
+          <div class="species-card">
+            <img src="./images/Octopusunderwater.png" alt="Octopus" />
+            <h3>Octopus</h3>
+          </div>
+          <div class="species-card">
+            <img src="./images/Shark.png" alt="Shark" />
+            <h3>Shark</h3>
+          </div>
+        </div>
+      </section>
 
-    <!-- Підключення скрипту — завжди перед закриваючим </body> -->
+      <section class="depths">
+        <div class="depths-container">
+          <h2 class="depths-title">Explore Ocean Depths</h2>
+          
+          <input type="radio" id="tab-surface" name="depth-tabs" checked class="tab-switch">
+          <input type="radio" id="tab-twilight" name="depth-tabs" class="tab-switch">
+          <input type="radio" id="tab-abyss" name="depth-tabs" class="tab-switch">
+          <input type="radio" id="tab-mariana" name="depth-tabs" class="tab-switch">
+
+          <div class="depths-tabs">
+            <label for="tab-surface" class="tab-button btn-surface">Surface (0m)</label>
+            <label for="tab-twilight" class="tab-button btn-twilight">Twilight Zone (~200m)</label>
+            <label for="tab-abyss" class="tab-button btn-abyss">Abyss (~1000m)</label>
+            <label for="tab-mariana" class="tab-button btn-mariana">Mariana Trench (~2000m)</label>
+          </div>
+
+          <div class="depth-cards-wrapper">
+            
+            <div class="depth-card card-surface">
+              <div class="depth-info">
+                <span class="depth-badge">Temp: 24°C</span>
+                <h3 class="depth-card-title">The Sunlit Surface</h3>
+                <p class="depth-text">
+                  The epipelagic zone receives ample sunlight, fueling photosynthesis 
+                  and supporting the majority of ocean life, including playful dolphins and coastal crabs.
+                </p>
+                <a href="#" class="depth-link">0m Depth Range</a>
+              </div>
+              <div class="depth-image-wrapper">
+                <img src="./images/sunlitsurface.png" alt="The Sunlit Surface" class="depth-image" />
+              </div>
+            </div>
+
+            <div class="depth-card card-twilight">
+              <div class="depth-info">
+                <span class="depth-badge">Temp: 8°C</span>
+                <h3 class="depth-card-title">The Twilight Zone</h3>
+                <p class="depth-text">
+                  Sunlight rapidly fades in the mesopelagic zone. Bioluminescence begins to 
+                  appear as glowing jellyfish and squid navigate the dim, cool waters.
+                </p>
+                <a href="#" class="depth-link">~200m Depth Range</a>
+              </div>
+              <div class="depth-image-wrapper">
+                <img src="./images/twillight.png" alt="The Twilight Zone" class="depth-image" />
+              </div>
+            </div>
+
+            <div class="depth-card card-abyss">
+              <div class="depth-info">
+                <span class="depth-badge">Temp: 2°C</span>
+                <h3 class="depth-card-title">The Abyss</h3>
+                <p class="depth-text">
+                  Complete darkness and immense pressure characterize the bathypelagic 
+                  zone. Strange creatures like the Anglerfish use bioluminescent lures to survive.
+                </p>
+                <a href="#" class="depth-link">~1000m Depth Range</a>
+              </div>
+              <div class="depth-image-wrapper">
+                <img src="./images/abbys.png" alt="The Abyss" class="depth-image" />
+              </div>
+            </div>
+
+            <div class="depth-card card-mariana">
+              <div class="depth-info">
+                <span class="depth-badge">Temp: 1°C</span>
+                <h3 class="depth-card-title">The Mariana Trench</h3>
+                <p class="depth-text">
+                  The hadalpelagic zone, the deepest trenches on Earth. Pitch black and 
+                  near-freezing, home to highly specialized lifeforms like the snailfish.
+                </p>
+                <a href="#" class="depth-link">~2000m+ Depth Range</a>
+              </div>
+              <div class="depth-image-wrapper">
+                <img src="./images/trench.png" alt="The Mariana Trench" class="depth-image" />
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-policy">
+        <h4 class="footer-title">Ocean Research Station</h4>
+        <p class="footer-description">Educational project for kids</p>
+        <p class="rights">
+          © 2026 Ocean Research Station • Built for The Buoyant Laboratory
+        </p>
+      </div>
+      <div class="footer-links">
+        <ul class="footer-list">
+          <li class="list-item">
+            <a href="#" class="item-link">Research Data</a>
+          </li>
+          <li class="list-item">
+            <a href="#" class="item-link">Safety Protocol</a>
+          </li>
+          <li class="list-item"><a href="#" class="item-link">Privacy</a></li>
+          <li class="list-item"><a href="#" class="item-link">Contact</a></li>
+        </ul>
+      </div>
+    </footer>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
