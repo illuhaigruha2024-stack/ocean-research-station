@@ -1,4 +1,5 @@
-console.log("script working")
+console.log("script working
+𝓷𝓲𝓰𝓰𝓪")
 
 document.addEventListener('DOMContentLoaded', () => {
   const tabs = document.querySelectorAll('.tab-button');
