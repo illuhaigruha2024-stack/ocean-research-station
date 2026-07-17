@@ -6,9 +6,9 @@
     <title>Ocean Research Station</title>
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
-    />
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"/>
     <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
   </head>
 
   <body>
@@ -19,6 +19,7 @@
           <p class="description-text">
             Explore the ocean and discover marine life
           </p>
+
         </div>
       </div>
     </header>
@@ -27,9 +28,9 @@
       <section class="discovered">
         <div class="discovered-container">
           <h2 class="discovered-title">Discovered Species</h2>
-          <button class="discovered-button">
-            Discovered Species: <span> 0 </span>
-          </button>
+          <button class="species-btn">
+                    🔍 Discovered species: <span id="counter">0</span>
+                </button>
         </div>
         <div class="cards-container">
           <div class="species-card">
@@ -62,20 +63,25 @@
         </div>
       </section>
 
-      <section class="depths">
+<section class="depths">
         <div class="depths-container">
           <h2 class="depths-title">Explore Ocean Depths</h2>
           
+<audio id="sound-surface" src="sounds/0m.mp3" preload="auto"></audio>
+<audio id="sound-twilight" src="sounds/200m.mp3" preload="auto"></audio>
+<audio id="sound-abyss" src="sounds/1000m.mp3" preload="auto"></audio>
+<audio id="sound-mariana" src="sounds/2000m.mp3" preload="auto"></audio>
+
           <input type="radio" id="tab-surface" name="depth-tabs" checked class="tab-switch">
           <input type="radio" id="tab-twilight" name="depth-tabs" class="tab-switch">
           <input type="radio" id="tab-abyss" name="depth-tabs" class="tab-switch">
           <input type="radio" id="tab-mariana" name="depth-tabs" class="tab-switch">
 
           <div class="depths-tabs">
-            <label for="tab-surface" class="tab-button btn-surface">Surface (0m)</label>
-            <label for="tab-twilight" class="tab-button btn-twilight">Twilight Zone (~200m)</label>
-            <label for="tab-abyss" class="tab-button btn-abyss">Abyss (~1000m)</label>
-            <label for="tab-mariana" class="tab-button btn-mariana">Mariana Trench (~2000m)</label>
+            <label for="tab-surface" class="tab-button btn-surface" data-sound="sound-surface">Surface (0m)</label>
+            <label for="tab-twilight" class="tab-button btn-twilight" data-sound="sound-twilight">Twilight Zone (~200m)</label>
+            <label for="tab-abyss" class="tab-button btn-abyss" data-sound="sound-abyss">Abyss (~1000m)</label>
+            <label for="tab-mariana" class="tab-button btn-mariana" data-sound="sound-mariana">Mariana Trench (~2000m)</label>
           </div>
 
           <div class="depth-cards-wrapper">
@@ -139,33 +145,7 @@
                 <img src="./images/trench.png" alt="The Mariana Trench" class="depth-image" />
               </div>
             </div>
-
+<script src="script.js"></script>
           </div>
         </div>
       </section>
-    </main>
-
-    <footer class="footer">
-      <div class="footer-policy">
-        <h4 class="footer-title">Ocean Research Station</h4>
-        <p class="footer-description">Educational project for kids</p>
-        <p class="rights">
-          © 2026 Ocean Research Station • Built for The Buoyant Laboratory
-        </p>
-      </div>
-      <div class="footer-links">
-        <ul class="footer-list">
-          <li class="list-item">
-            <a href="#" class="item-link">Research Data</a>
-          </li>
-          <li class="list-item">
-            <a href="#" class="item-link">Safety Protocol</a>
-          </li>
-          <li class="list-item"><a href="#" class="item-link">Privacy</a></li>
-          <li class="list-item"><a href="#" class="item-link">Contact</a></li>
-        </ul>
-      </div>
-    </footer>
-    <script src="script.js"></script>
-  </body>
-</html>
