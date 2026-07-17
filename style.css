@@ -3,7 +3,7 @@
 }
 
 body {
-  font-family: "Plus Jakarta Sans", "Arial", sans-serif;
+  font-family: "Plus Jakarta Sans",;
   background-color: #e8f2f9;
   color: #273034;
   margin: 0;
@@ -87,7 +87,7 @@ a {
 }
 
 .species-card:first-child {
-  background-color: #f4faff;
+  background-color: #ffffff;
 }
 
 .species-card img {
@@ -250,10 +250,20 @@ a {
   margin: 0;
 }
 
-.discovered-button {
+.species-btn {
   color: #005560;
   background-color: #96e6f6;
   border-radius: 45px;
   border: none;
   padding: 10
+}
+
+.species-card:hover {
+    transform: translateY(-8px);
+}
+
+.species-card.active {
+    border: 3px solid #67d7ff;
+    transform: scale(1.03);
+    transition: 0.3s;
 }
