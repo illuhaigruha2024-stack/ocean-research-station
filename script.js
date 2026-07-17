@@ -1,22 +1,23 @@
 console.log("script working")
 
 document.addEventListener('DOMContentLoaded', () => {
-  alert("JS підключено і він працює!");
-
   const tabs = document.querySelectorAll('.tab-button');
 
   tabs.forEach(button => {
     button.addEventListener('click', () => {
       const soundId = button.getAttribute('data-sound');
-      
-      alert("Ти натиснув на кнопку! Має грати звук: " + soundId);
-
       const audio = document.getElementById(soundId);
+
       if (audio) {
+        document.querySelectorAll('audio').forEach(sound => {
+          sound.pause();
+          sound.currentTime = 0; 
+        });
+
         audio.currentTime = 0;
-        audio.play().catch(err => alert("Помилка відтворення: " + err));
-      } else {
-        alert("Аудіо-елемент з id '" + soundId + "' не знайдено в HTML!");
+        audio.play().catch(error => {
+          console.warn("Браузер блокує автоматичний звук. Спробуй спочатку клікнути будь-де на сторінці:", error);
+        });
       }
     });
   });
